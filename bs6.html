@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Task 6</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap6_styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <form id="myForm">
+            <div class="form-group">
+                <label for="inputName">Name</label>
+                <input type="text" name="Name" class="form-control input-text" id="inputName" placeholder="Enter name">
+                <div id="inputNameError" class="text-danger"></div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail">Email</label>
+                <input type="email" name="Email" class="form-control input-text" id="inputEmail" placeholder="Enter email">
+                <div id="inputEmailError" class="text-danger"></div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword">Password</label>
+                <input type="password" name="Password" class="form-control input-text" id="inputPassword" placeholder="Enter password">
+                <div id="inputPasswordError" class="text-danger"></div>
+            </div>
+            <div class="form-group">
+                <label for="inputHobbies">Hobbies</label>
+                <select name="Hobbies" id="inputHobbies" class="form-control w-50">
+                    <option value="" selected disabled></option>
+                    <option value="Coding">Coding</option>
+                    <option value="Piano">Piano</option>
+                    <option value="Reading">Reading</option>
+                    <option value="Games">Games</option>
+                </select>
+            </div>
+            <button type="submit" class="btn bg-danger border rounded text-white p-2 w-50">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById("myForm");
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const elements = form.elements;
+            for (let i = 0; i < elements.length; i++) {
+                const element = elements[i];
+                if (element.tagName === "INPUT") {
+                    const value = element.value.trim();
+                    const errorDiv = document.getElementById(element.id + "Error");
+                    if (value === "") {
+                        errorDiv.textContent = element.name + " is required";
+                        element.style.borderColor = "red";
+                    } else {
+                        errorDiv.textContent = "";
+                    }
+                }
+            }
+            const errors = form.querySelectorAll(".text-danger");
+            let hasErrors = false;
+            errors.forEach((error) => {
+                if (error.textContent !== "") {
+                    hasErrors = true;
+                }
+            });
+            if (!hasErrors) {
+                form.submit();
+            }
+        });
+    </script>
+</body>
+</html>

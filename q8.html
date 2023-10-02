@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML TASK-Task5</title>
+    <style>
+        table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td {
+        border: none;
+    }
+    .l{
+        text-align:center;
+        width:100px;
+    }
+    .l1{
+        width:200px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"] {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .gender-radio {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .gender-radio label {
+        text-align: center;
+    }
+    .last{
+        text-align: right;
+    }
+    .heading{
+        text-align: center;
+        color: blue;
+    }
+    body{
+        background: linear-gradient(to bottom, white 0%, #f24c88 100%);
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+    }
+    #register_button{
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px; 
+            cursor: pointer;
+            font-size: 18px;
+    }
+    .error{
+        color: red;
+    }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <h1 class="heading">Registration Form</h1>
+    <table>
+        <tr>
+            <td class="l"><label for="fn" ><strong>First Name</strong></label></td>
+            <td class="l1"><input  type="text" id="fn" name="fn" required><div id="fn_error" class="error"></div><br></td>
+            
+        </tr>
+        <tr>
+            <td class="l"><label for="ln" ><strong>Last Name</strong></label></td>
+            <td class="l1"><input  type="text" id="ln" name="ln" required><div id="ln_error" class="error"></div><br></td>
+            
+        </tr>
+        <tr>
+            <td class="l"><label for="em" ><strong>Email</strong></label></td>
+            <td class="l1"><input type="email" id="em" name="em" required><div id="em_error" class="error"></div><br></td>
+            
+        </tr>
+        <tr>
+            <td class="l"><label for="pw" ><strong>Password</strong></label></td>
+            <td class="l1"><input type="password" id="pw" name="pw" required><div id="pw_error" class="error"></div><br></td>
+            
+        </tr>
+        <tr>
+            <td class="l"><label for="pw1" ><strong>Re-enter Password</strong></label></td>
+            <td class="l1"><input type="password" id="pw1" name="pw1" required><div id="pw1_error" class="error"></div><br></td>
+            
+        </tr>
+        <tr>
+            <td class="l"><label for="gen"><strong>Gender:</strong></label></td>
+        <td class="l1">
+            <div class="gender-radio">
+                <label><input type="radio" name="gender" value="male"> Male</label>
+                <label><input type="radio" name="gender" value="female"> Female</label>
+            </div>
+        </td>
+        </tr>
+        <tr>
+            <td class="l"><label for="age" ><strong>Age:</strong></label></td>
+            <td class="l1"><input type="number" id="age" name="age" required><div id="age_error" class="error"></div><br></td>
+            
+        </tr>
+        <tr>
+            <td class="l"><label for="ph" ><strong>Phone Number</strong></label></td>
+            <td class="l1"><input type="number" id="ph" name="ph" required><div id="ph_error" class="error"></div><br></td>
+            
+        </tr>
+        <tr>
+            <td class="l"><label for="address"><strong>Address:</strong></label></td>
+            <td class="l1"><textarea id="address" name="address" rows="4" cols="150" required></textarea><div id="address_error" class="error"></div></td>
+            
+        </tr>
+        <tr>
+            <td class="l"><label for="s" ><strong>State</strong></label></td>
+            <td class="l1"><input  type="text" id="s" name="s" required><div id="s_error" class="error"></div></td>
+            
+        </tr>
+        <tr>
+            <td class="l"><label for="country" ><strong>Country</strong></label></td>
+            <td class="l1"><select id="country" name="country" required>
+                <option value="" disabled selected>Choose your country</option>
+                <option value="usa">USA</option>
+                <option value="canada">Canada</option>
+                <option value="india">India</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td class="l"><label for="languages_known"><strong>Languages known</strong></label></td>
+            <td class="l1">
+                <input type="checkbox" id="english" name="languages_known[]" value="english">
+                <label for="english">English</label>
+                
+                <input type="checkbox" id="kannada" name="languages_known[]" value="kannada">
+                <label for="kannada">Kannada</label>
+                
+                <input type="checkbox" id="Hindi" name="languages_known[]" value="Hindi">
+                <label for="Hindi">Hindi</label>
+                
+                <input type="checkbox" id="Telugu" name="languages_known[]" value="Telugu">
+                <label for="Telugu">Telugu</label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="checkbox" >
+                <label>Hereby I declare all the given details are true</label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="last">
+                Log in to <a href="https://ethnus.com/">Ethnus</a> website
+            </td>
+        </tr>
+    </table>
+    <div style="text-align:center">
+    <button type="button" id="register_button">REGISTER</button>
+</div>
+<script>
+    document.getElementById("register_button").addEventListener('click',function(){
+        const first_n=document.getElementById("fn").value;
+        const last_n=document.getElementById("ln").value;
+        const email=document.getElementById("em").value;
+        const password=document.getElementById("pw").value;
+        const password1=document.getElementById("pw1").value;
+        const age=document.getElementById("age").value;
+        const phone=document.getElementById("ph").value;
+        const addr=document.getElementById("address").value;
+        const state=document.getElementById("s").value;
+        let errors=false;
+
+        if(first_n.length==0){
+            document.getElementById("fn_error").textContent="POOR";
+            errors=true;
+        }
+        else{
+            document.getElementById("fn_error").textContent="";
+        }
+        if(last_n.length==0){
+            document.getElementById("ln_error").textContent="POOR";
+            errors=true;
+        }
+        else{
+            document.getElementById("ln_error").textContent="";
+        }
+        if(email.length==0){
+            document.getElementById("em_error").textContent="POOR";
+            errors=true;
+        }
+        else{
+            document.getElementById("em_error").textContent="";
+        }
+        if(password.length==0){
+            document.getElementById("pw_error").textContent="POOR";
+            errors=true;
+        }
+        else{
+            document.getElementById("pw_error").textContent="";
+        }
+        if(password1.length==0){
+            document.getElementById("pw1_error").textContent="POOR OR MISMATCH";
+            errors=true;
+        }
+        else{
+            document.getElementById("pw1_error").textContent="";
+        }
+        if(age.length==0){
+            document.getElementById("age_error").textContent="POOR";
+            errors=true;
+        }
+        else{
+            document.getElementById("age_error").textContent="";
+        }
+        if(phone.length==0){
+            document.getElementById("ph_error").textContent="POOR";
+            errors=true;
+        }
+        else{
+            document.getElementById("ph_error").textContent="";
+        }
+        if(addr.length==0){
+            document.getElementById("address_error").textContent="POOR";
+            errors=true;
+        }
+        else{
+            document.getElementById("address_error").textContent="";
+        }
+        if(state.length==0){
+            document.getElementById("s_error").textContent="POOR";
+            errors=true;
+        }
+        else{
+            document.getElementById("s_error").textContent="";
+        }
+        if(errors){
+            event.preventDefault();
+        }
+    });
+</script>
+</body>
+</html>

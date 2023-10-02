@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS TASK- Q4</title>
+</head>
+<body>
+    <button id="s_date">show date</button>
+    <p id="date_display"></p>
+    <button id="s_time">show time</button>
+    <p id="time_display"></p>
+    <script>
+        document.getElementById("s_date").addEventListener("click",function(){
+            const currentDate=new Date();
+            const p_date=document.getElementById("date_display");
+            p_date.textContent=currentDate.toDateString();
+        });
+        document.getElementById("s_time").addEventListener("click", function () {
+            const currentTime = new Date();
+            const p_time = document.getElementById("time_display");
+            const options = { timeZoneName: 'short' };
+            const localTime = currentTime.toLocaleTimeString('en-US', options);
+            p_time.textContent =localTime;
+        });
+    </script>
+
+</body>
+</html>

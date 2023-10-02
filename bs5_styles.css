@@ -1,0 +1,28 @@
+body {
+    background-color: aliceblue;
+}
+
+.form-container {
+    margin: 10% 0 10% 20%;
+}
+
+.text-input {
+    width: 110%;
+}
+
+.form-container {
+    display: inline-block;
+    padding: 5%;
+    width: 60%;
+    height: 60%;
+    background-color: rgb(232, 231, 231);
+}
+
+#send-button {
+    margin-left: 50%;
+}
+
+.fill-warning {
+    text-align: center;
+    margin: 0 auto;
+}

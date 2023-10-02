@@ -1,0 +1,14 @@
+.card_link {
+    color: orange;
+}
+
+.center-heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container {
+    margin-top: 150px;
+}

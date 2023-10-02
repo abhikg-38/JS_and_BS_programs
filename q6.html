@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <style>
+        /* Container for the dialog box */
+        .dialog-container {
+            width: 300px;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 0 auto;
+        }
+
+        /* Instagram logo */
+        .instagram-logo {
+            text-align: center;
+            font-size: 36px;
+            color: #405de6;
+        }
+
+        /* Username and password input fields */
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Log In button */
+        .log-in-button {
+            background-color: #405de6;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Remember me checkbox and Forgot Password link */
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        /* Horizontal divider */
+        .divider {
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        /* Sign up link */
+        .sign-up {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Link styling */
+        a {
+            color: #405de6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="dialog-container">
+        <div class="instagram-logo">Instagram</div>
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button class="log-in-button">Log In</button>
+        <div class="remember-forgot">
+            <label><input type="checkbox"> Remember me</label>
+            <a href="#">Forgot Password?</a>
+        </div>
+        <div class="divider"></div>
+        <div class="sign-up">
+            Don't have an account? <a href="#">Sign up here</a>
+        </div>
+    </div>
+</body>
+</html>

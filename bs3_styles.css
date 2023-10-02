@@ -1,0 +1,43 @@
+.custom_nav_li {
+    padding-right: 15px;
+}
+
+.custom_nav {
+    margin: 0;
+}
+
+.login_nav {
+    position: relative;
+    text-align: right;
+}
+
+.nav-container {
+    width: 100%;
+}
+
+.good-font {
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 1rem;
+}
+
+.pricing-heading {
+    text-align: center;
+}
+
+.pricing-paragraph {
+    text-align: center;
+    padding: 0 30% 0 30%;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.price-plan {
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+.container {
+    margin-left: 18%;
+}

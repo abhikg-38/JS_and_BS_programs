@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS TASK- Q7</title>
+    <style>
+        @keyframes trainMove {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+        .train {
+            width: 200px; 
+            position: relative;
+            animation: trainMove 5s linear infinite; 
+        }
+        .button_container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .para{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <img src="train.webp" alt="Train" class="train">
+    <div class="button_container">
+        <h3 class="para"><strong>Clcik the following buttons to handle animation</strong></h3>
+        <button id="start_button">Start</button>
+        <button id="stop_button">Stop</button>
+    </div>
+
+    <script>
+        const train = document.querySelector(".train");
+        const startButton = document.getElementById("start_button");
+        const stopButton = document.getElementById("stop_button");
+        let animationInterval;
+        function start_train() {
+            train.style.animationPlayState = "running";
+        }
+        function stop_train() {
+            train.style.animationPlayState = "paused";
+        }
+        startButton.addEventListener("click", start_train);
+        stopButton.addEventListener("click", stop_train);
+    </script>
+</body>
+</html>

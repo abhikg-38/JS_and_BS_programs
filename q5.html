@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS TASK- Q5</title>
+</head>
+<body>
+    <form id="my_form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <div id="name_error" class="error"></div>
+        <br>
+        <label for="mail">Email:</label>
+        <input type="email" id="email" name="email">
+        <div id="mail_error" class="error"></div>
+        <br>
+        <label for="website">Website:</label>
+        <input type="url" id="website" name="website">
+        <div id="website_error" class="error"></div>
+        <br>
+        <label for="message">Message:</label>
+        <textarea id="message" rows="4" cols="50" name="message"></textarea>
+        <div id="text_error" class="error"></div>
+        <br>
+        <input type="submit" value="submit">
+    </form>
+    <script>
+        document.getElementById("my_form").addEventListener('submit',function(event){
+            const name=document.getElementById("name").value;
+            const email=document.getElementById("email").value;
+            const url=document.getElementById("website").value;
+            const message=document.getElementById("message").value;
+            let errors=false;
+
+            if(name.length==0){
+                document.getElementById("name_error").textContent="This field is required";
+                errors=true;
+            }
+            else{
+                document.getElementById("name_error").textContent="";
+            }
+            const email_regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if(!email_regex.test(email)){
+                document.getElementById("mail_error").textContent="A valid email address is required";
+                errors=true;
+            }
+            else{
+                document.getElementById("mail_error").textContent="";
+            }
+            const website_regex = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
+            if(!website_regex.test(url)){
+                document.getElementById("website_error").textContent="A valid url is required";
+                errors=true;
+            }
+            else{
+                document.getElementById("website_error").textContent="";
+            }
+            if(message.length==0){
+                document.getElementById("text_error").textContent="This field is required";
+                errors=true;
+            }
+            else{
+                document.getElementById("text_error").textContent="";
+            }
+            if(errors){
+                event.preventDefault();
+            }
+        });
+    </script>
+    <style>
+        .error{
+            color:red;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS TASK- Q1</title>
+</head>
+<body>
+    <script>
+        function a(){
+        let num=prompt('Enter a number of your choice:');
+        let temp=num;let rev=0;
+        while(temp!=0){
+            let dig=temp%10;
+            rev=rev*10+dig;
+            temp=Math.floor(temp/10);
+        }
+        return(rev);
+    }
+    let res=a();
+    console.log('Returned number:'+res)
+        </script>
+</body>
+</html>
